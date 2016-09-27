@@ -18,6 +18,10 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *locationSegmentedControl;
 
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *typeSegmentedControl;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *showToastButton;
 
 @end

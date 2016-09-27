@@ -55,8 +55,25 @@
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fd4-Lt-591">
                                                 <segments>
                                                     <segment title="Top"/>
-                                                    <segment title="Middle"/>
-                                                    <segment title="center"/>
+                                                    <segment title="Center"/>
+                                                    <segment title="Bottom"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sVz-T3-ErE">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOP-5t-aFn">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-fe-gBs">
+                                                <segments>
+                                                    <segment title="None"/>
+                                                    <segment title="Info"/>
+                                                    <segment title="Warning"/>
+                                                    <segment title="Notice"/>
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
@@ -83,6 +100,7 @@
                         <outlet property="locationSegmentedControl" destination="Fd4-Lt-591" id="kVV-Ck-dBf"/>
                         <outlet property="messageToDisplayLabel" destination="xnr-y1-VA7" id="8tF-eS-Fcw"/>
                         <outlet property="showToastButton" destination="c2j-4s-5f7" id="6ge-Zr-rfH"/>
+                        <outlet property="typeSegmentedControl" destination="0Xk-fe-gBs" id="gX9-tM-XA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

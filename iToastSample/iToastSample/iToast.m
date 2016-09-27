@@ -60,7 +60,8 @@ static iToastSettings *sharedSettings = nil;
 	[self show:iToastTypeNone];
 }
 
-- (void) show:(iToastType) type {
+- (void) show:(iToastType) type
+{
 	
 	iToastSettings *theSettings = _settings;
 	
@@ -138,10 +139,12 @@ static iToastSettings *sharedSettings = nil;
 	// Set correct orientation/location regarding device orientation
 	UIInterfaceOrientation orientation = (UIInterfaceOrientation)[[UIApplication sharedApplication] statusBarOrientation];
 	double version = [[[UIDevice currentDevice] systemVersion] doubleValue];
-	switch (orientation) {
+	switch (orientation)
+    {
 		case UIDeviceOrientationPortrait:
 		{
-			if (theSettings.gravity == iToastGravityTop) {
+			if (theSettings.gravity == iToastGravityTop)
+            {
 				point = CGPointMake(window.frame.size.width / 2, 45);
 			} else if (theSettings.gravity == iToastGravityBottom) {
 				point = CGPointMake(window.frame.size.width / 2, window.frame.size.height - 45);
@@ -156,20 +159,23 @@ static iToastSettings *sharedSettings = nil;
 		}
 		case UIDeviceOrientationPortraitUpsideDown:
 		{
-			if (version < 8.0) {
+			if (version < 8.0)
+            {
 				v.transform = CGAffineTransformMakeRotation(M_PI);
 			}
 			
 			float width = window.frame.size.width;
 			float height = window.frame.size.height;
 			
-			if (theSettings.gravity == iToastGravityTop) {
+			if (theSettings.gravity == iToastGravityTop)
+            {
 				point = CGPointMake(width / 2, height - 45);
 			} else if (theSettings.gravity == iToastGravityBottom) {
 				point = CGPointMake(width / 2, 45);
 			} else if (theSettings.gravity == iToastGravityCenter) {
 				point = CGPointMake(width/2, height/2);
-			} else {
+			} else
+            {
 				// TODO : handle this case
 				point = theSettings.postition;
 			}
@@ -179,7 +185,8 @@ static iToastSettings *sharedSettings = nil;
 		}
 		case UIDeviceOrientationLandscapeLeft:
 		{
-			if (version < 8.0) {
+			if (version < 8.0)
+            {
 				v.transform = CGAffineTransformMakeRotation(M_PI/2); //rotation in radians
 			}
 			

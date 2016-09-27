@@ -14,7 +14,8 @@
 
 @implementation ViewController
 
-@synthesize locationSegmentedControl, showToastButton, messageToDisplayLabel, durationSegmentedControl;
+@synthesize locationSegmentedControl, durationSegmentedControl, typeSegmentedControl;
+@synthesize showToastButton, messageToDisplayLabel;
 
 
 - (void)viewDidLoad {
@@ -73,7 +74,31 @@
             break;
     }
     
-    [[[[iToast makeText:msgToDisplay] setGravity:locationType] setDuration:duration] show];
+    //type of toast?
+    iToastType typeOfToast;
+    switch (typeSegmentedControl.selectedSegmentIndex) {
+        //none
+        case 0:
+            typeOfToast = iToastTypeNone;
+            break;
+        //info
+        case 1:
+            typeOfToast = iToastTypeInfo;
+            break;
+        //warning
+        case 2:
+            typeOfToast = iToastTypeWarning;
+            break;
+        //notice
+        case 3:
+            typeOfToast = iToastTypeNotice;
+            break;
+            
+        default:
+            break;
+    }
+    
+    [[[[iToast makeText:msgToDisplay] setGravity:locationType] setDuration:duration] show:typeOfToast];
 }//eo-a
 
 
